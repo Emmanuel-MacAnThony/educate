@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import environ
+from django.urls import reverse_lazy
+
 
 env = environ.Env()
 environ.Env.read_env()
@@ -43,7 +45,10 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # project apps
-    "courses.apps.CoursesConfig"
+    "courses.apps.CoursesConfig",
+    "students.apps.StudentsConfig",
+    # third party apps
+    'embed_video',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +141,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # serving media files
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+
+LOGIN_REDIRECT_URL = reverse_lazy('student_course_list')
