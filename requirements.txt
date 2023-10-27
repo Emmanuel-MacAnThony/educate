@@ -14,7 +14,9 @@ colorama==0.4.6
 cssselect2==0.7.0
 Django==4.1.12
 django-braces==1.15.0
+django-embed-video==1.4.4
 django-environ==0.11.2
+djangorestframework==3.13.1
 flower==1.2.0
 fonttools==4.43.1
 html5lib==1.1
